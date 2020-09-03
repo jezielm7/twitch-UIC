@@ -1,9 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 
 import Header from '../../components/Header';
+import Heading from '../../components/Heading';
+import Title from '../../components/Title';
 
 import { Wrapper, Container, Main } from './styles';
+import CategoryList from '../../components/CategoryList';
 
 interface Item {
   key: string;
@@ -12,21 +15,54 @@ interface Item {
 }
 
 const Following: React.FC = () => {
-  React.useMemo(() => {
+  const { data, indices } = React.useMemo(() => {
     const items: Item[] = [
       {
         key: 'PAGE_HEADING',
-        render: () => <View />
+        render: () => <Heading>Following</Heading>,
       },
 
       {
         key: 'FOLLOWED_CATEGORIES',
-        render: () => <View />,
+        render: () => <Title>Followed Categories</Title>,
         isTitle: true,
       },
 
-      { key: 'C1', render: () => <View /> },
-    ]
+      { key: 'C1', render: () => <CategoryList /> },
+
+      {
+        key: 'LIVE_CHANNELS',
+        render: () => <Title>Live Channels</Title>,
+        isTitle: true,
+      },
+
+      { key: 'C2', render: () => <View /> },
+
+      {
+        key: 'CONTINUE_WATCHING',
+        render: () => <Title>Continue Watching</Title>,
+        isTitle: true,
+      },
+
+      { key: 'C3', render: () => <View /> },
+
+      {
+        key: 'OFFLINE_CHANNELS',
+        render: () => <Title>Offline Channels</Title>,
+        isTitle: true,
+      },
+
+      { key: 'C4', render: () => <View /> },
+    ];
+
+    const indices: number[] = [];
+
+    items.forEach((item, index) => item.isTitle && indices.push(index));
+
+    return {
+      data: items,
+      indices,
+    };
   }, []);
 
   return (
@@ -34,7 +70,17 @@ const Following: React.FC = () => {
       <Container>
         <Header />
 
-        <Main />
+        <Main>
+          <FlatList<Item>
+            data={data}
+            renderItem={({ item }) => item.render()}
+            keyExtractor={item => item.key}
+            stickyHeaderIndices={indices}
+
+            onRefresh={() => {}}
+            refreshing={false}
+          />
+        </Main>
       </Container>
     </Wrapper>
   );
