@@ -6,6 +6,7 @@ import Heading from '../../components/Heading';
 import Title from '../../components/Title';
 import CategoryList from '../../components/CategoryList';
 import StreamList from '../../components/StreamList';
+import ChannelList from '../../components/ChannelList';
 
 import { Wrapper, Container, Main } from './styles';
 
@@ -53,7 +54,7 @@ const Following: React.FC = () => {
         isTitle: true,
       },
 
-      { key: 'C4', render: () => <View /> },
+      { key: 'C4', render: () => <ChannelList /> },
     ];
 
     const indices: number[] = [];
