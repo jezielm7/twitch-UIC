@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 
 import Header from '../../components/Header';
 import Heading from '../../components/Heading';
 import Title from '../../components/Title';
+import CategoryList from '../../components/CategoryList';
+import StreamList from '../../components/StreamList';
 
 import { Wrapper, Container, Main } from './styles';
-import CategoryList from '../../components/CategoryList';
 
 interface Item {
   key: string;
@@ -36,7 +37,7 @@ const Following: React.FC = () => {
         isTitle: true,
       },
 
-      { key: 'C2', render: () => <View /> },
+      { key: 'C2', render: () => <StreamList /> },
 
       {
         key: 'CONTINUE_WATCHING',
@@ -44,7 +45,7 @@ const Following: React.FC = () => {
         isTitle: true,
       },
 
-      { key: 'C3', render: () => <View /> },
+      { key: 'C3', render: () => <StreamList /> },
 
       {
         key: 'OFFLINE_CHANNELS',
