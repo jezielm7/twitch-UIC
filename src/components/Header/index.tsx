@@ -2,13 +2,15 @@ import React from 'react';
 import { MaterialIcons, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 
 import colors from '../../styles/colors';
+import profile from '../../images/profile.jpg';
 
-import { Container, Avatar, OnlineStatus, RightSide, Button } from './styles';
+import { Container, Avatar, AvatarImage, OnlineStatus, RightSide, Button } from './styles';
 
 const Header: React.FC = () => {
   return (
     <Container>
       <Avatar>
+        <AvatarImage source={profile} />
         <OnlineStatus/>
       </Avatar>
 

@@ -15,7 +15,7 @@ export const StreamContainer = styled.TouchableOpacity`
 
 export const StreamThumbnail = styled.Image`
   width: 120px;
-  height: 66px;
+  height: 90px;
 `;
 
 export const StreamColumn = styled.View`
@@ -24,7 +24,7 @@ export const StreamColumn = styled.View`
 `;
 
 export const StreamRow = styled.View`
-  height: 66px;
+  height: 90px;
   justify-content: space-between;
 `;
 
@@ -33,9 +33,10 @@ export const StreamHeader = styled.View`
   align-items: center;
 `;
 
-export const StreamAvatar = styled.View`
+export const StreamAvatar = styled.Image`
   width: 20px;
   height: 20px;
+  margin-bottom: 5px;
   border-radius: 10px;
   background: ${colors.tag};
 `;
@@ -56,7 +57,8 @@ export const StreamCategory = styled.Text`
 `;
 
 export const TagRow = styled.View`
-  margin-top: 8px;
+  margin-top: 10px;
+  margin-left: 8px;
   flex-direction: row;
 `;
 

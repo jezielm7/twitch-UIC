@@ -19,6 +19,12 @@ export const Avatar = styled.TouchableOpacity`
   border-radius: 16px;
 `;
 
+export const AvatarImage = styled.Image`
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+`;
+
 export const OnlineStatus = styled.View`
   background: ${colors.green};
   

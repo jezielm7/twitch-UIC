@@ -1,5 +1,6 @@
 import React from 'react';
 
+import profile from '../../images/profile.jpg';
 import streamThumbnail from '../../images/stream_thumbnail.jpg';
 
 import {
@@ -26,12 +27,12 @@ const StreamList: React.FC = () => {
       <StreamRow>
         <StreamColumn>
           <StreamHeader>
-            <StreamAvatar />
+            <StreamAvatar source={profile} />
             <StreamUsername numberOfLines={1}>jezielm7</StreamUsername>
           </StreamHeader>
 
           <StreamDescription numberOfLines={1}>
-            Mobile dev. com React Native, GraphQL e typescript.
+            Mobile Dev React Native, GraphQL e TS.
           </StreamDescription>
 
           <StreamCategory numberOfLines={1}>
@@ -41,10 +42,13 @@ const StreamList: React.FC = () => {
 
         <TagRow>
           <TagView>
-            <TagText>Portuguese</TagText>
+            <TagText>English</TagText>
           </TagView>
           <TagView>
-            <TagText>Mobile Development</TagText>
+            <TagText>React Native</TagText>
+          </TagView>
+          <TagView>
+            <TagText>TypeScript</TagText>
           </TagView>
         </TagRow>
       </StreamRow>

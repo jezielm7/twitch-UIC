@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text } from 'react-native';
 
+import apollo from '../../images/apollo.png';
+
 import { 
   List, 
   ChannelContainer,
@@ -17,10 +19,10 @@ const ChannelList: React.FC = () => {
   const ChannelItem = () => (
     <ChannelContainer>
       <LeftSide>
-        <Avatar />
+        <Avatar source={apollo}/>
         <Column>
-          <Username>rocketseat_oficial</Username>
-          <Info>36 new videos</Info>
+          <Username>ApolloGraphQL</Username>
+          <Info>7 new videos</Info>
         </Column>
       </LeftSide>
 

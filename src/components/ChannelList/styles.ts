@@ -19,15 +19,14 @@ export const LeftSide = styled.View`
   align-items: center;
 `;
 
-export const Avatar = styled.View`
-  width: 48px;
-  height: 48px;
-  border-radius: 24px;
-  background: ${colors.tag};
+export const Avatar = styled.Image`
+  width: 52px;
+  height: 52px;
+  border-radius: 26px;
 `;
 
 export const Column = styled.View`
-  padding-right: 14px;
+  padding-left: 10px;
 `;
 
 export const Username = styled.Text`
